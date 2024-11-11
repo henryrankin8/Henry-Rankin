@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page2styles.css" />
+    <title>UBC Counselling Questionnaire - Page 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>NOW FOR SOME MORE PERSONAL QUESTIONS...</h1>
+        <h2>
+          PLEASE TAKE INTO ACCOUNT THAT THE FOLLOWING QUESTIONS WILL INFLUENCE
+          WHO YOU’LL BE PAIRED UP WITH...
+        </h2>
+      </header>
+      <div class="form-group">
+        <label
+          >10
+          <span
+            >What is your primary reason for seeking counseling?</span
+          ></label
+        >
+        <div class="checkbox-group">
+          <label
+            ><input
+              type="checkbox"
+              name="counseling"
+              value="Stress management"
+            />
+            Stress management</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="counseling"
+              value="Academic challenges"
+            />
+            Academic challenges</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="Counseling"
+              value="Relationship issues"
+            />
+            Relationship issues</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="Counseling"
+              value="Mental health support (anxiety, depression)"
+            />
+            Mental health support (anxiety, depression)</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="Counseling"
+              value="Gender-identity and self-acceptance support"
+            />
+            Gender-identity and self-acceptance support</label
+          >
+          <label
+            ><input type="checkbox" name="Counseling" value="Career guidance" />
+            Career guidance</label
+          >
+          <!-- Other option with a text input for specifying custom reason -->
+          <label>
+            <input
+              type="checkbox"
+              id="otherCheckbox"
+              name="counseling"
+              value="Other"
+            />
+            Other
+          </label>
+          <input
+            type="text"
+            id="otherInput"
+            name="otherReason"
+            placeholder="Please specify"
+            style="display: none; margin-top: 5px"
+          />
+        </div>
+      </div>
+
+      <form id="surveyForm">
+        <div class="form-group">
+          <label
+            >11
+            <span
+              >How comfortable are you with discussing your personal
+              challenges?</span
+            ></label
+          >
+          <div class="radio-group">
+            <label
+              ><input
+                type="radio"
+                name="comfortLevel"
+                value="Very comfortable"
+                required
+              />
+              Very comfortable</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="comfortLevel"
+                value="Somewhat comfortable"
+                required
+              />
+              Somewhat comfortable</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="comfortLevel"
+                value="Neutral"
+                required
+              />
+              Neutral</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="comfortLevel"
+                value="Somewhat uncomfortable"
+                required
+              />
+              Somewhat uncomfortable</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="comfortLevel"
+                value="Very uncomfortable"
+                required
+              />
+              Very uncomfortable</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            >12
+            <span
+              >What is your availability for counseling sessions?</span
+            ></label
+          >
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="availability" value="Mornings" />
+              Mornings</label
+            >
+            <label
+              ><input type="checkbox" name="availability" value="Afternoons" />
+              Afternoons</label
+            >
+            <label
+              ><input type="checkbox" name="availability" value="Evenings" />
+              Evenings</label
+            >
+            <label
+              ><input type="checkbox" name="availability" value="Weekends" />
+              Weekends</label
+            >
+            <label
+              ><input type="checkbox" name="availability" value="Flexible" />
+              Flexible</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            >13
+            <span>Would you prefer online or in-person sessions?</span></label
+          >
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="sessionPreference" value="Online" />
+              Online</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="sessionPreference"
+                value="In-person"
+              />
+              In-person</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="sessionPreference"
+                value="No preference"
+              />
+              No preference</label
+            >
+          </div>
+        </div>
+
+        <div class="progress-bar2-container">
+          <div class="progress-bar2"><div></div></div>
+        </div>
+
+        <div class="navigation-buttons">
+          <a href="HTML PAGE 1 QUIZ.html" class="prev-button"
+            >← Previous Page</a
+          >
+          <a href="results_page.html" class="next-button">Next Page →</a>
+        </div>
+
+        <button type="submit" class="submit-button">Save & Close</button>
+      </form>
+    </div>
+    <script>
+      document.getElementById("surveyForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Fetch all form elements and their values
+        const formData = new FormData(document.getElementById("surveyForm"));
+        const formValues = {};
+        formData.forEach((value, key) => {
+          formValues[key] = value;
+        });
+    
+        // Convert the form values to CSV format
+        const csvContent = convertToCSV([formValues]);
+        const blob = new Blob([csvContent], { type: "text/csv" });
+        
+        // Create a download link for the CSV file
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "survey_data.csv";
+        link.click();
+      });
+    
+      // Function to convert object to CSV
+      function convertToCSV(objArray) {
+        const array = Array.isArray(objArray) ? objArray : [objArray];
+        const headers = Object.keys(array[0]).join(",") + "\n";
+    
+        const rows = array.map(obj =>
+          Object.values(obj)
+            .map(value => `"${value}"`) // Wrap each value in quotes to handle commas
+            .join(",")
+        );
+    
+        return headers + rows.join("\n");
+      }
+    </script>
+  </body>
+</html>

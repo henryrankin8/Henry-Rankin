@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #003366; /* Dark blue background */
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px dashed #003366;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 80px; /* Larger logo size */
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.header h1 {
+    font-size: 22px;
+    color: #003366;
+    font-weight: bold;
+}
+
+.intro {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.subtext {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.counselor {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.counselor img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.counselor-info {
+    flex: 1;
+}
+
+.counselor-info h2 {
+    font-size: 16px;
+    color: #003366;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.counselor-info p {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.connect-button {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 12px;
+    color: #0066FF;
+    background-color: #f2f2f2;
+    border: 1px solid #0066FF;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.connect-button:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page2styles.css" />
+    <title>UBC Counselling Questionnaire</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="Images/UBCBetterLogo.png" alt="UBC Logo" class="logo" />
+        <h1>
+          READY TO GET CONNECTED WITH A COUNSELOR? <span class="emoji">👋</span>
+        </h1>
+        <h2>LET’S START WITH SOME EASY QUESTIONS...</h2>
+      </header>
+
+      <form id="surveyForm">
+        <div class="form-group">
+          <label>1 <span>Student Number</span></label>
+          <input
+            type="number"
+            id="studentNumber"
+            name="studentNumber"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            >2 <span>What email do you want us to reach out to?</span></label
+          >
+          <input
+            type="email"
+            id="emailAddress"
+            name="emailAddress"
+            placeholder="example@email.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>3 <span>What year are you currently enrolled in?</span></label>
+          <select id="enrollmentYear" name="enrollmentYear" required>
+            <option value="">Select Option</option>
+            <option value="1st">1st Year</option>
+            <option value="2nd">2nd Year</option>
+            <option value="3rd">3rd Year</option>
+            <option value="4th">4th Year</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>4 <span>What faculty are you in?</span></label>
+          <select id="faculty" name="faculty" required>
+            <option value="">Select Option</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Land & Food Systems">Land & Food Systems</option>
+            <option value="Music">Music</option>
+            <option value="Allard School of Law">Allard School of Law</option>
+            <option value="Faculty of Medicine">Faculty of Medicine</option>
+            <option value="School of Public Health">
+              School of Public Health
+            </option>
+            <option value="Forestry">Forestry</option>
+            <option value="Dentistry">Dentistry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label
+            >5 <span>What is your current level of study at UBC?</span></label
+          >
+          <select id="studyLevel" name="studyLevel" required>
+            <option value="">Select Option</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Doctorate">Doctorate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>6 <span>How do you self-identify?</span></label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="gender" value="Male" required />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Female" required />
+              Female</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Non-binary" required />
+              Non-binary</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Genderqueer" required />
+              Genderqueer/Gender Non-Conforming</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="gender"
+                value="Prefer not to say"
+                required
+              />
+              Prefer not to say</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>7 <span>Do you self-identify as Indigenous?</span></label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="indigenous" value="Yes" required />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="indigenous" value="No" required />
+              No</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>8 <span>Are you part of a UBC Varsity Program?</span></label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="varsity" value="Yes" required />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="varsity" value="No" required />
+              No</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            >9
+            <span
+              >Are you enrolled in the Beyond Scholars Tomorrow Program?</span
+            ></label
+          >
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="beyondScholars" value="Yes" required />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="beyondScholars" value="No" required />
+              Yes</label
+            >
+            <div class="progress-bar-container">
+              <div class="progress-bar"><div></div></div>
+            </div>
+
+            <div class="navigation-buttons">
+              <a href="opening page.html" class="prev-button"
+                >← Previous Page</a
+              >
+              <a href="HTML PAGE 2 QUIZ.html" class="next-button"
+                >Next Page →</a
+              >
+            </div>
+
+            <button type="submit" class="submit-button">Save & Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
